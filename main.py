@@ -69,10 +69,20 @@ def getEvents(date):
     events = events_result.get('items', [])
     return events
 
+
+#function deletes every event on a given date
+def clearDay(date):
+    for event in getEvents(date):
+        deleteEvent(event)
+
+#fuction deletes a specific event on a given date
+def deleteEvent(event):
+    print(event['id'])
+    service.events().delete(calendarId='primary', eventId=event['id']).execute()
+    
+
 def main():
-    createToken()
-    # print(getEvents('2024-9-9'))
-    createEvent('test',1,'2024-9-9', '10:00', '13:00', allowDuplicates=False)
+    createToken() # you must create the token before using other fuctions
 
 
 if __name__ == '__main__':
