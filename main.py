@@ -1,4 +1,4 @@
-import os, datetime
+import os
 #YOU MUST CREATE A PROJECT ON GOOGLE CLOUD AND ADD THE CREDENTIALS FILE.
 #install these packages with this command: pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 from google.auth.transport.requests import Request
